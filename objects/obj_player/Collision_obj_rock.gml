@@ -9,6 +9,8 @@ if (alive)
 	alive = false;
 	image_alpha = 0
 
+	global.currentScore = obj_game.points;
+
 	audio_play_sound(snd_lose, 0, false);
 	audio_stop_sound(snd_music);
 
