@@ -1,10 +1,16 @@
-if (powerup == 2) exit
+if (alive)
+{
+	if (powerup == 2) exit
 
-effect_create_above(ef_firework,x,y,1,c_red);
+	powerup = 0;
 
-instance_destroy()
+	effect_create_above(ef_firework,x,y,1,c_red);
 
-audio_play_sound(snd_lose, 0, false);
-audio_stop_sound(snd_music);
+	alive = false;
+	image_alpha = 0
 
-obj_game.alarm[0] = 120;	
+	audio_play_sound(snd_lose, 0, false);
+	audio_stop_sound(snd_music);
+
+	obj_game.alarm[0] = 120;	
+}
